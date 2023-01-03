@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+  <title>Frontend Mentor | Interactive rating component</title>
+
+</head>
+<body>
+
+  <!-- Rating state start -->
+  <div class="container" id="first-screen">
+    <div class="avatar">
+      <img class="star-img" src="./images/icon-star.svg" alt="star image">
+    </div>
+    <h3 class="title">How did we do?</h3>
+    <p class="paragraph">
+      Please let us know how we did with your support request. All feedback is appreciated 
+      to help us improve our offering!
+    </p>
+
+    <div class="stars" id="stars">
+      <div class="avatar">
+        <div class="number">1</div>
+      </div>
+      <div class="avatar">
+        <div class="number">2</div>
+      </div>
+      <div class="avatar">
+        <div class="number">3</div>
+      </div>
+      <div class="avatar">
+        <div class="number">4</div>
+      </div>
+      <div class="avatar">
+        <div class="number">5</div>
+      </div>
+    </div>
+    <button  class="submit-btn" id="submit-btn">Submit</button>
+  </div>
+
+
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+  <div class="container hide" id="secend-screen">
+    <div class="center">
+      <div class="img-conaimer">
+        <img src="./images/illustration-thank-you.svg" alt="">
+      </div>
+      <div class="summary" id="summary">
+        
+      </div>
+      
+      <h3 class="title">Thank you!</h3>
+      <p class="end-paragraph">
+        We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!
+      </p>
+    </div>
+  </div>
+  <!-- Thank you state end -->
+  <script src="index.js"></script>
+</body>
+</html>
