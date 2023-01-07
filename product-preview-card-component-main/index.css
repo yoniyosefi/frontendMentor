@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
 
-*,*::after,*::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 :root{
     --darkCyan: hsl(158, 36%, 37%);
     --cream:hsl(30, 38%, 92%);
@@ -13,117 +7,171 @@
     --darkGrayishBlue: hsl(228, 12%, 48%);
     --white: hsl(0, 0%, 100%);
 
-    --font-family: 'Fraunces', serif;
-    -font-family: 'Montserrat', sans-serif;
+    --ff-accent: 'Fraunces', serif;
+    --ff-primary: 'Montserrat', sans-serif;
 }
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
 
 body{
+    margin: 1rem;
     background-color: var(--cream);
-    padding: 1.4rem 0.7rem;
-    font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    display: grid;
+    place-content: center;
+    font-family: var(--ff-primary);
+    font-weight: 500;
+    color: var(--darkCyan);
+    font-size: 0.875rem;
 }
-.container{
+
+.product{
     background-color: var(--white);
-    border-radius: 0.5rem;
+    border-radius:.5rem;
+    display: grid;
     overflow: hidden;
+    max-width: 600px;
 }
 
-.img{
-    background-image: url("./images/image-product-mobile.jpg");
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; 
-    height: 35vh;
-}
-
-.card-body{
-    padding: 1.6rem;
-}
-
-
-.type{
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    color:var(--darkGrayishBlue);
-    letter-spacing: .6vh;
-    font-size: .8rem;
-}
-
-.title{
-    font-family: 'Fraunces', serif;
-    font-size: 2rem;
-    margin-top: 1.4vh;
-    line-height: 1;
-}
-
-.detailes{
-    font-family: 'Montserrat', sans-serif;
-    color:var(--darkGrayishBlue);
-    font-size: .9rem;
-    line-height: 1.7rem;
-    margin-top: 1.5vh;
-}
-
-.price{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 3.2vh;
+.product__content{
+    padding: 1.5rem;
+    display: grid;
     gap:1rem;
 }
 
-.price .main-price{
+.product__title{
+    font-family: var(--ff-accent);
+    font-weight: 700;
     font-size: 2rem;
+    color: var(--veryDarkBlue);
+}
+
+
+
+.product__category{
+    font-size: .875rem;
+    text-transform: uppercase;
     color: var(--darkCyan);
-    font-family: 'Fraunces', serif;
+    letter-spacing: .25rem;
 }
 
-.price .original-price{
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: line-through;
-    color: var(--darkGrayishBlue);
+.flex-group{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.add-btn{
+.product__price{
+    color:var(--darkCyan);
+    font-size: 2rem;
+    font-family:var(--ff-accent);
+}
+
+.button{
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.75rem;
+    border-radius: .5rem;
     color: var(--white);
     background-color: var(--darkCyan);
-    text-align: center;
-    border-radius: 0.43rem;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    margin-top: 3vh;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    cursor: pointer;
-    gap:.5rem
-}
-.add-btn:hover{
-    background-color: var(--veryDarkBlue);
+    padding: .75rem 1.5rem;
+    font-weight: 700;
+    border: none;
 }
 
+.button[data-icon="shopping-cart"]::before {
+    content: "";
+    background-image: url("images/icon-cart.svg");
+    width: 15px;
+    height: 16px;
+  }
 
+.button:is(:hover, :focus) {
+    background-color:var(--veryDarkBlue)
+  }  
 
-@media screen and (min-width: 800px) {
-    .container{
-        display: flex;
-        flex-direction: row;
-        width:70vh;
+  @media (min-width: 600px) {
+    .product {
+      grid-template-columns: 1fr 1fr;
     }
-    .img{
-        background-image: url("./images/image-product-desktop.jpg");
-        background-position: center; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        background-size: cover; 
-        width: 50%;
-        height: auto;
-    }
-    .card-body{
-        width: 30vh;
-    }
-}
+  }  
