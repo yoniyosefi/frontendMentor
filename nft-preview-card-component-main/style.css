@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root{
+    --softBlue: hsl(215, 24%, 53%);
+    --cyan: hsl(178, 100%, 50%);
+
+    --veryDarkBlueMain: hsl(217, 54%, 11%);
+    --veryDarkBlueCard: hsl(216, 50%, 16%);
+    --veryDarkBlueLine : hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+
+main{
+    background-color: var(--veryDarkBlueMain);
+    height: 100%;
+    display: grid;
+    place-content:center;
+    font-family: 'Outfit', sans-serif;
+    color: var(--softBlue);
+    font-size: 1.125rem;
+    cursor: pointer;
+}
+
+.product_container{
+    margin: 1.2rem;
+    padding: 1.2rem;
+    background-color: var(--veryDarkBlueCard);
+    border-radius: 1.2rem;
+    max-width: 360px;
+}
+
+.img_container{
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.img_hover_container{
+    position: absolute;
+    top: 0;
+    background-color: hsl(178, 100%,50%, 60%);
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    opacity: 0;
+}
+
+.img_hover {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.img_hover_container:hover{
+    opacity: 1;
+}
+
+
+.product_body{
+    margin-top: 1.6rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.product_title{
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.625rem;
+}
+
+.product_purchace{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+}
+
+hr{
+    background-color: var(--veryDarkBlueLine);
+    height: 1px;
+    border: none;
+}
+
+.product_footer{
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+}
+
+.creator_avatar{
+    border: var(--white) solid 1.2px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 12px;
+}
+
+.creator_avatar img{
+    width: 100%;
+    height: 100%;
+}
+
+.creator_name span{
+    color: var(--white);
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.flex img{
+    margin-right: 5px;
+}
+
+.price{
+    color: var(--cyan);
+    font-weight: 400;
+}
+
+.flex p{
+    font-size: 1rem;
+}
+
+.product_title:hover ,.creator_name :hover{
+    color: var(--cyan);
+}
