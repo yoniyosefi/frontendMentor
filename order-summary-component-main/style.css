@@ -87,6 +87,7 @@ main{
     background-size: contain;
     background-position:top;
     font-family: 'Red Hat Display', sans-serif;
+    cursor: pointer;
 }
 
 .order_container{
@@ -140,12 +141,20 @@ main{
     box-shadow: 0px 20px 10px hsl(224, 23%,80%, 55%);
 }
 
+.oreder_proceed_btn:hover{
+    background-color: hsl(245, 76%, 70%);
+}
+
 .oreder_cancel_btn{
     border: none;
     background-color: transparent;
     color: var(--desaturatedBlue);
     font-weight: 700;
     font-size: 1.1rem;
+}
+
+.oreder_cancel_btn:hover{
+    color: black;
 }
 
 .plane_type{
@@ -162,6 +171,10 @@ main{
     text-decoration: underline;
     font-weight: 900;
     font-size: .875rem;
+}
+
+.order_update_btn:hover{
+    text-decoration: none;
 }
 
 @media (min-width: 600px) {
