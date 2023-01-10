@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"); /*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+main {
+  min-height: 100vh;
+  padding: 6em 0rem;
+  background-image: linear-gradient(hsl(273deg, 75%, 66%), hsl(240deg, 73%, 65%));
+  display: grid;
+  place-content: center;
+  font-family: "Kumbh Sans", sans-serif;
+}
+main .faq_container {
+  border-radius: 1.2rem;
+  background-color: white;
+  margin: 1.2rem;
+  position: relative;
+  padding: 2rem;
+  min-width: 90vw;
+}
+@media screen and (min-width: 992px) {
+  main .faq_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem;
+    min-width: 80vw;
+  }
+}
+main .faq_container .faq_image_container {
+  position: absolute;
+}
+main .faq_container .faq_image_container img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 991px) {
+  main .faq_container .faq_image_container {
+    max-width: 400px;
+    height: auto;
+    width: 70%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 2;
+  }
+}
+@media screen and (min-width: 992px) {
+  main .faq_container .faq_image_container {
+    max-width: 50%;
+    width: auto;
+    height: 70%;
+    top: 50%;
+    left: 0;
+    transform: translate(-15%, -50%);
+  }
+}
+main .faq_container .faq_shodow_container {
+  position: absolute;
+}
+main .faq_container .faq_shodow_container img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 991px) {
+  main .faq_container .faq_shodow_container {
+    max-width: 400px;
+    height: auto;
+    width: 70%;
+    top: 62px;
+    left: 50%;
+    transform: translate(-50%, -60%);
+  }
+}
+@media screen and (min-width: 992px) {
+  main .faq_container .faq_shodow_container {
+    width: auto;
+    height: 120%;
+    top: 50%;
+    left: 0;
+    transform: translate(-38%, -50%);
+  }
+}
+main .faq_container .title {
+  font-size: 2rem;
+}
+@media screen and (max-width: 991px) {
+  main .faq_container .title {
+    margin-top: 6rem;
+    text-align: center;
+  }
+}
+main .faq_container .faq_list {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+main .faq_container p {
+  font-size: 0.75rem;
+}
+
+.faq_item .faq_item_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.faq_item .faq_item_head .rotate {
+  transform: rotate(180deg);
+}
+.faq_item .faq_item_head .bold {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.faq_item .hide {
+  display: none;
+}
+.faq_item .faq_item_body {
+  max-width: 15rem;
+  margin-top: 0.8rem;
+}
+.faq_item .seperator {
+  margin-top: 1rem;
+  border: none;
+  height: 0.6px;
+  background-color: rgb(198, 201, 203);
+}/*# sourceMappingURL=style.css.map */

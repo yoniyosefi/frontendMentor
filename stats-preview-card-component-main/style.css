@@ -132,9 +132,16 @@ main{
 }
 
 
+.deatailes p{
+    font-family: var(--ffAccent);
+    text-transform: uppercase;
+    margin-top: .5rem;
+    font-size: .9rem;
+}
 
 .deatailes h2{
     color: var(--white);
+    font-family: var(--ffAccent);
 }
 
 @media (max-width: 850px) {

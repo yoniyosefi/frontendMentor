@@ -1,0 +1,92 @@
+@use '../abstracts' as *;
+
+main{
+    min-height: 100vh;
+    padding: 6em 0rem ;
+    background-image: linear-gradient($softViolet,$softBlue);
+    display: grid;
+    place-content: center;
+    font-family: $font-family;
+    .faq_container{
+        border-radius: 1.2rem;
+        background-color: white;
+        margin: 1.2rem;
+        position: relative;
+        padding:2rem;
+        min-width: 90vw;
+        @media screen and (min-width: 992px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 3rem;
+            min-width: 80vw;
+          }
+
+  
+        .faq_image_container{
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            position: absolute;
+
+            @media screen and (max-width: $small-breakepoint) {
+                max-width: 400px;
+                height: auto;
+                width: 70%;
+                top:0;
+                left: 50%;
+                transform: translate(-50%,-60%);       
+                z-index: 2;        
+              }
+            @media screen and (min-width: $big-breakepoint) {
+                max-width: 50%;
+                width: auto;
+                height: 70%;
+                top:50%;
+                left: 0;
+                transform: translate(-15%,-50%);  
+              }
+        }
+
+        .faq_shodow_container{
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            position: absolute;
+
+            @media screen and (max-width: $small-breakepoint) {
+                max-width: 400px;
+                height: auto;
+                width: 70%;
+                top:62px;
+                left: 50%;
+                transform: translate(-50%,-60%);          
+              }
+            @media screen and (min-width: $big-breakepoint) {
+                width: auto;
+                height: 120%;
+                top:50%;
+                left: 0;
+                transform: translate(-38%,-50%);  
+              }
+        }
+
+        .title{
+            font-size: $fonts-size-large;
+            @media screen and (max-width: $small-breakepoint) {
+                margin-top: 6rem;
+                text-align: center;
+              }
+        }
+        .faq_list{
+            margin-top: .8rem;
+            margin-bottom: .8rem;
+        }
+        p{
+            font-size: $font-size-small;
+        }
+    }
+}
+
+

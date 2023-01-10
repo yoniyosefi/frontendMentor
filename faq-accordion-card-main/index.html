@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+</head>
+<body>
+  <main>
+    <article class="faq_container">
+      <div class="faq_header">
+        <picture class="faq_image_container">
+          <source media="(min-width:992px)" srcset="./images/illustration-woman-online-desktop.svg">
+          <img src="./images/illustration-woman-online-mobile.svg" alt="">
+        </picture>
+        <picture class="faq_shodow_container">
+          <source media="(min-width:992px)" srcset="./images/bg-pattern-desktop.svg">
+          <img src="./images/bg-pattern-mobile.svg" alt="">
+        </picture>
+      </div>
+      <div>
+        <h1 class="title">FAQ</h1>
+        <div class="faq_list">
+          <div class="faq_item">
+            <div class="faq_item_head">
+              <p class="faq_item_title">How many team members can I invite?</p>
+              <img src="./images/icon-arrow-down.svg" alt="open question button">
+            </div>
+            <div class="faq_item_body hide">
+              <p>
+                You can invite up to 2 additional users on the Free plan. There is no limit on 
+                team members for the Premium plan.
+              </p>
+            </div>
+            <hr class="seperator">
+          </div>
+          <div class="faq_item">
+            <div class="faq_item_head">
+              <p class="faq_item_title">What is the maximum file upload size?</p>
+              <img src="./images/icon-arrow-down.svg" alt="open question button">
+            </div>
+            <div class="faq_item_body hide">
+              <p>
+                No more than 2GB. All files in your account must fit your allotted storage space.
+              </p>
+            </div>
+            <hr class="seperator">
+          </div>
+          <div class="faq_item">
+            <div class="faq_item_head">
+              <p class="faq_item_title">How do I reset my password?</p>
+              <img src="./images/icon-arrow-down.svg" alt="open question button">
+            </div>
+            <div class="faq_item_body hide">
+              <p>
+                Click “Forgot password” from the login page or “Change password” from your profile page.
+                A reset link will be emailed to you.
+              </p>
+            </div>
+            <hr class="seperator">
+          </div>    
+          <div class="faq_item">
+            <div class="faq_item_head">
+              <p class="faq_item_title">Can I cancel my subscription?</p>
+              <img src="./images/icon-arrow-down.svg" alt="open question button">
+            </div>
+            <div class="faq_item_body hide">
+              <p>
+                Yes! Send us a message and we’ll process your request no questions asked.
+              </p>
+            </div>
+            <hr class="seperator">
+          </div>        
+          <div class="faq_item">
+            <div class="faq_item_head">
+              <p class="faq_item_title">Do you provide additional support?</p>
+              <img src="./images/icon-arrow-down.svg" alt="open question button">
+            </div>
+            <div class="faq_item_body hide">
+              <p>
+                Chat and email support is available 24/7. Phone lines are open during normal business hours.
+              </p>
+            </div>
+            <hr class="seperator">
+          </div>   
+        </div>
+      </div>
+    </article>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

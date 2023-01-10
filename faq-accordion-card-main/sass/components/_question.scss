@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.faq_item{
+    .faq_item_head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-top: 1rem;
+        .rotate{
+            transform: rotate(180deg);
+        }
+        .bold{
+            font-weight: 700;
+            font-size: $font-size-medium;
+        }
+    }
+
+    .hide{
+        display: none;
+    }
+    .faq_item_body{
+        max-width: 15rem;
+        margin-top: .8rem;
+    }
+    .seperator{
+        margin-top: 1rem;
+        border: none;
+        height: .6px;
+        background-color: rgb(198, 201, 203);
+    }
+}
