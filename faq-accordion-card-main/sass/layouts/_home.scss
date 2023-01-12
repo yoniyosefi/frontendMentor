@@ -7,6 +7,7 @@ main{
     display: grid;
     place-content: center;
     font-family: $font-family;
+
     .faq_container{
         border-radius: 1.2rem;
         background-color: white;
@@ -19,6 +20,16 @@ main{
             grid-template-columns: 1fr 1fr;
             padding: 3rem;
             min-width: 80vw;
+            .faq_shodow_container{
+                img{
+                    display: none;
+                }
+            }
+            background-image: url('../../images/bg-pattern-desktop.svg');
+            background-repeat: no-repeat;
+            background-size: contain; 
+            background-position-x: -16%;
+            background-position-y: 40px;  
           }
 
   
@@ -45,6 +56,16 @@ main{
                 top:50%;
                 left: 0;
                 transform: translate(-15%,-50%);  
+                ::after{
+                    position:absolute;
+                    top: 74%;
+                    transform: translate(0,-50%);  
+                    content: '';
+                    background-image: url('../../images/illustration-box-desktop.svg');
+                    height: 200px;
+                    width: 200px;
+                    background-repeat: no-repeat; 
+                } 
               }
         }
 
@@ -61,7 +82,7 @@ main{
                 width: 70%;
                 top:62px;
                 left: 50%;
-                transform: translate(-50%,-60%);          
+                transform: translate(-50%,-60%);         
               }
             @media screen and (min-width: $big-breakepoint) {
                 width: auto;

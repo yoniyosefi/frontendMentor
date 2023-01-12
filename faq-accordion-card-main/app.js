@@ -12,7 +12,8 @@ window.addEventListener('load',()=>{
                     }
                     question?.children[0]?.children[0]?.classList.toggle('bold');
                     if(question.children.length>1){
-                        question.children[1].classList.toggle('hide') 
+                        question.children[1].classList.toggle('hide');
+                        question.children[1].classList.toggle('show') 
                     }
                 })
                 

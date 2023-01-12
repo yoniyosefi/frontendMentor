@@ -1,11 +1,12 @@
 @use '../abstracts' as *;
 
 .faq_item{
+    cursor: pointer;
     .faq_item_head{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 2rem;
+        gap: 1rem;
         margin-top: 1rem;
         .rotate{
             transform: rotate(180deg);
@@ -14,10 +15,19 @@
             font-weight: 700;
             font-size: $font-size-medium;
         }
+        .faq_item_title:hover{
+            color: $softRed;
+        }
     }
-
+    .show{
+        height: 2rem;
+        overflow: hidden;
+        transition: height .5s ease;
+    }
     .hide{
-        display: none;
+        height: 0;
+        overflow: hidden;
+        transition: height .5s ease;
     }
     .faq_item_body{
         max-width: 15rem;

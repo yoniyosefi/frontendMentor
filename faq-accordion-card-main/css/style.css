@@ -78,6 +78,14 @@ main .faq_container {
     grid-template-columns: 1fr 1fr;
     padding: 3rem;
     min-width: 80vw;
+    background-image: url("../../images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: -16%;
+    background-position-y: 40px;
+  }
+  main .faq_container .faq_shodow_container img {
+    display: none;
   }
 }
 main .faq_container .faq_image_container {
@@ -106,6 +114,16 @@ main .faq_container .faq_image_container img {
     top: 50%;
     left: 0;
     transform: translate(-15%, -50%);
+  }
+  main .faq_container .faq_image_container ::after {
+    position: absolute;
+    top: 74%;
+    transform: translate(0, -50%);
+    content: "";
+    background-image: url("../../images/illustration-box-desktop.svg");
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
   }
 }
 main .faq_container .faq_shodow_container {
@@ -151,11 +169,14 @@ main .faq_container p {
   font-size: 0.75rem;
 }
 
+.faq_item {
+  cursor: pointer;
+}
 .faq_item .faq_item_head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 1rem;
 }
 .faq_item .faq_item_head .rotate {
@@ -165,8 +186,18 @@ main .faq_container p {
   font-weight: 700;
   font-size: 0.85rem;
 }
+.faq_item .faq_item_head .faq_item_title:hover {
+  color: hsl(14deg, 88%, 65%);
+}
+.faq_item .show {
+  height: 2rem;
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
 .faq_item .hide {
-  display: none;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease;
 }
 .faq_item .faq_item_body {
   max-width: 15rem;
