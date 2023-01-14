@@ -1,0 +1,49 @@
+@use '../absracts' as *;
+
+.ratings{
+    display: grid;
+    gap: 1.2rem;
+    @media (min-width:$big-screen) {
+        grid-column: 2/3;
+        place-content: center right;
+    }
+}
+
+.rating{
+    background-color: $magenta;
+    border-radius: $border-radios;
+    
+    .stars{
+        display: flex;
+        justify-content: center;
+        gap:.4rem;
+    }
+
+    p{
+        color: $purple;
+        font-weight: 700;
+    }
+
+    @media (max-width:$small-screen) {
+        display: grid;
+        gap:.4rem;
+        place-content: center;
+        padding: 1rem;
+    }
+    @media (min-width:$big-screen) {
+        display: flex;
+        align-items: center;
+        padding: .6rem 2rem;
+        gap: 2rem;
+        width: 26em;
+        &:first-child{
+            transform: translateX(-100px);
+        }
+        &:nth-child(2){
+            transform: translateX(-50px);
+        }
+        p{
+            margin-top: 6px;
+        }
+    }
+}

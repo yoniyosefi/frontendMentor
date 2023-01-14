@@ -1,0 +1,63 @@
+@use '../absracts' as *;
+
+main{
+    display: grid;
+    place-content: center;
+    background-repeat: no-repeat;
+    background-position:left top, right bottom;
+
+    @media (max-width:$small-screen) {
+        background-image: url('../../images/bg-pattern-top-mobile.svg'),
+        url('../../images/bg-pattern-bottom-mobile.svg');
+        background-size: 12rem;
+    }
+
+    @media (min-width:$big-screen) {
+        background-image: url('../../images/bg-pattern-top-desktop.svg'),
+        url('../../images/bg-pattern-bottom-desktop.svg');
+        background-size: 24rem;
+    }
+}
+
+.container{
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    padding:6rem 1.2rem;
+    font-family: $font;
+
+    .title{
+        color: $purple;
+        font-weight: 700;
+        line-height: 1;
+        font-size: 2.5rem;
+    }
+
+    .lead{
+        margin-top: 1rem;
+        font-size: 1.15rem;
+    }
+    @media (max-width:$small-screen) {
+        gap: 3rem;
+        max-width: 400px;
+        .title{
+            text-align: center;
+        }
+        .lead{
+            text-align: center;
+        }
+    }
+    @media (min-width:$big-screen) {
+        gap:4rem;
+        grid-template-columns: 1fr 1.8fr;
+        .header{
+            grid-column: 1/2;
+            max-width: 400px;
+        }
+        .title{
+            font-size: 2.9rem;
+        }
+
+    }
+}
+
