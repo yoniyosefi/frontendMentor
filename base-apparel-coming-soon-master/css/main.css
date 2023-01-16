@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"); /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+main {
+  font-family: "Josefin Sans", sans-serif;
+  height: 100%;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: linear-gradient(135deg, hsl(0deg, 0%, 100%), hsl(0deg, 100%, 98%));
+}
+@media (min-width: 1000px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr 3fr;
+    place-content: center;
+  }
+}
+@media (max-width: 999px) {
+  .container .hero {
+    padding: 2em;
+  }
+  .container .hero img {
+    height: 1.4em;
+  }
+}
+@media (min-width: 1000px) {
+  .container .hero {
+    display: grid;
+    place-content: center left;
+    padding-left: 12vw;
+    padding-top: 8%;
+    grid-column: 1/1;
+    grid-row: 1/1;
+  }
+}
+.container .main__img {
+  width: 100%;
+}
+@media (max-width: 999px) {
+  .container .main__img {
+    width: 100vw;
+  }
+  .container .main__img img {
+    max-height: 50vh;
+    width: 100vw;
+  }
+}
+@media (min-width: 1000px) {
+  .container .main__img {
+    max-width: 50vw;
+    grid-column: 2/3;
+    grid-row: 1/-1;
+  }
+  .container .main__img img {
+    width: 100%;
+    height: 100vh;
+  }
+}
+.container .body h1 {
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.2cm;
+  color: hsl(0deg, 6%, 24%);
+}
+.container .body h1 span {
+  color: hsl(0deg, 36%, 70%);
+  font-weight: 300;
+}
+@media (max-width: 999px) {
+  .container .body h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+@media (min-width: 1000px) {
+  .container .body h1 {
+    font-size: 4rem;
+    max-width: 5rem;
+  }
+}
+.container .body p {
+  max-width: 24rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: hsl(0deg, 36%, 70%);
+}
+@media (max-width: 999px) {
+  .container .body p {
+    text-align: center;
+  }
+}
+.container .body .input__container {
+  margin-top: 2rem;
+  position: relative;
+  width: 100%;
+  max-width: 24rem;
+}
+.container .body .input__container .hide {
+  display: none;
+}
+.container .body .input__container .error {
+  border: 2px solid hsl(0deg, 63%, 47%);
+}
+.container .body .input__container input {
+  width: 100%;
+  background-color: transparent;
+  border: 0.7px solid hsl(0deg, 7%, 79%);
+  border-radius: 22rem;
+  padding: 0.8rem 1.2rem;
+}
+.container .body .input__container input::-moz-placeholder {
+  color: hsl(0deg, 36%, 70%);
+  font-size: 0.875rem;
+  opacity: 0.5;
+}
+.container .body .input__container input:-ms-input-placeholder {
+  color: hsl(0deg, 36%, 70%);
+  font-size: 0.875rem;
+  opacity: 0.5;
+}
+.container .body .input__container input::placeholder {
+  color: hsl(0deg, 36%, 70%);
+  font-size: 0.875rem;
+  opacity: 0.5;
+}
+.container .body .input__container .error__img___container {
+  position: absolute;
+  right: max(24%, 5rem);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.container .body .input__container .input__img___container {
+  position: absolute;
+  padding: 0.8rem max(8%, 1.6rem);
+  right: 0;
+  top: 50%;
+  height: 100%;
+  transform: translateY(-50%);
+  border-radius: 22rem;
+  background: linear-gradient(135deg, hsl(0deg, 80%, 86%), hsl(0deg, 74%, 74%));
+  border: none;
+  cursor: pointer;
+}
+.container .body .input__container .input__img___container img {
+  height: 100%;
+}
+.container .body .input__container .input__img___container:hover {
+  background: linear-gradient(135deg, hsl(0deg, 0%, 100%), hsl(0deg, 78%, 88%));
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.container .body .input__container .error-msg {
+  position: absolute;
+  top: 2.5rem;
+  left: 1.5rem;
+}
+.container .body .input__container .error-msg p {
+  font-size: 0.875rem;
+}
+@media (max-width: 999px) {
+  .container .body {
+    padding: 5rem 2rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 1000px) {
+  .container .body {
+    display: grid;
+    place-content: center left;
+    padding-left: 12vw;
+    grid-column: 1/1;
+    grid-row: 2/3;
+  }
+}/*# sourceMappingURL=main.css.map */

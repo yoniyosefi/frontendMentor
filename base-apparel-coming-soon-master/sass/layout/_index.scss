@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+//colors
+$desaturatedRed: hsl(0, 36%, 70%);
+$sofRed: hsl(0, 93%, 68%);
+$darkGrayishRed: hsl(0, 6%, 24%);
+
+// screen sizes
+$sm-screen:999px;
+$big-screen:1000px;
+
+
+main{
+    font-family: 'Josefin Sans', sans-serif;
+    height: 100%;
+}
+
+.container{
+    min-height: 100vh;
+    background-color:linear-gradient(135deg,  hsl(0, 0%, 100%),  hsl(0, 100%, 98%));
+    
+    @media (min-width:$big-screen) {
+        display: grid;
+        grid-template-columns:1fr auto;
+        grid-template-rows: 1fr 3fr ;
+        place-content: center;          
+    }
+    .hero{
+        @media (max-width:$sm-screen) {
+            
+            padding:  2em;
+            img{
+                height: 1.4em;
+            }
+        }
+        @media (min-width:$big-screen) {
+            display: grid;
+            place-content:  center left;
+            padding-left: 12vw;
+            padding-top: 8%;
+            grid-column: 1/1;
+            grid-row: 1/1;   
+        }
+    }
+    .main__img{
+        width: 100%;
+        @media (max-width:$sm-screen) {
+           width: 100vw;  
+
+           img{
+              max-height: 50vh;
+              width: 100vw;
+           }    
+        }
+        @media (min-width:$big-screen) {
+            max-width: 50vw;
+            grid-column: 2/3;
+            grid-row: 1/-1;
+            img{
+                width: 100%;
+                height: 100vh;
+            }          
+        }
+        
+
+    }
+    .body{
+
+        
+        h1{
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: .2cm;
+            color: $darkGrayishRed;
+            span{
+                color: $desaturatedRed;
+                font-weight: 300;
+            }
+            @media (max-width:$sm-screen) {
+                font-size: 3rem;
+                text-align: center;
+                
+            }
+            @media (min-width:$big-screen) {
+                font-size: 4rem;
+                max-width: 5rem;
+            }
+        }
+
+        p{
+            max-width: 24rem;
+            margin-top: 1rem;
+            font-size: .875rem;
+            color: $desaturatedRed;
+            @media (max-width:$sm-screen) {
+                text-align: center;
+            }         
+        }
+
+        .input__container{
+            margin-top: 2rem;
+            position: relative;
+            width: 100%;
+            max-width: 24rem;
+            .hide{
+                display: none;
+            }
+            .error{
+                border:2px solid hsl(0, 63%, 47%);
+            }
+            input{
+                width: 100%;
+                background-color: transparent;
+                border:.7px solid hsl(0, 7%, 79%);
+                border-radius: 22rem;
+                padding: .8rem 1.2rem;
+            
+                &::placeholder{
+                    color: $desaturatedRed;
+                    font-size: .875rem;
+                    opacity: .5;
+                }
+
+            }
+            .error__img___container{
+                position: absolute;
+                right:max(24%,5rem);
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .input__img___container{
+                position: absolute;
+                padding: .8rem max(8%,1.6rem);
+                right: 0;
+                top: 50%;
+                height: 100%;
+                transform: translateY(-50%);
+                border-radius: 22rem;
+                background: linear-gradient(135deg,  hsl(0, 80%, 86%),  hsl(0, 74%, 74%));
+                border: none;
+                cursor: pointer;
+                img{
+                    height: 100%;
+                }
+                &:hover{
+                    background:linear-gradient(135deg,  hsl(0, 0%, 100%),  hsl(0, 78%, 88%));
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                }
+            }
+
+            .error-msg{
+                position: absolute;
+                top:2.5rem;
+                left:1.5rem;
+                p{
+                    font-size: .875rem;
+                }
+            }
+        }
+        @media (max-width:$sm-screen) {
+            padding: 5rem 2rem;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (min-width:$big-screen) {
+            display: grid;
+            place-content:  center left;
+            padding-left: 12vw;
+            grid-column: 1/1;
+            grid-row: 2/3;
+        }
+    }
+}
+
+
