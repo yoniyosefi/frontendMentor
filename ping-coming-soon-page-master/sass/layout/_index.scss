@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+//screen sizes
+$sm-screen:46.9em;
+$large-screen:47em;
+
+//colors
+$blue: hsl(223, 87%, 63%);
+
+$paleBlue: hsl(223, 100%, 88%);
+$lightRed: hsl(354, 100%, 66%);
+
+$gray: hsl(0, 0%, 59%);
+$veryDarkBlue: hsl(209, 33%, 12%);
+
+//bold
+$light:300;
+$bold:600;
+$bolder:700;
+
+//font-size
+$xSm-fs:0.75rem;
+$sm-fs:0.875rem;
+$md-fs:1.5rem;
+$large-fs:3rem;
+
+main{
+    font-family: 'Libre Franklin', sans-serif;
+    display: grid;
+    min-height: 100vh;
+}
+
+.container{
+    display: grid;
+    place-content: center;
+    padding: 1.2rem;
+    
+    
+    .header{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 1.2rem;
+        img{
+            width: 4rem;
+            margin-bottom: 3rem;
+        }
+        .title{
+            color: $gray;
+            font-weight: $light;
+            font-size: $md-fs;
+            margin-bottom: 1rem;
+            span{
+                color: black;
+                font-weight: $bolder;
+            }
+            @media  screen and (min-width:$large-screen) {
+                font-size: $large-fs;
+            }
+        }
+        p{
+            font-size: $sm-fs;
+            @media  screen and (min-width:$large-screen) {
+                font-size: $md-fs;
+            }
+        }
+    }
+    .input_container{
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: $sm-fs;
+        margin-bottom: 3rem;
+        position: relative;
+        //add if email not valid
+        .invalid_border{
+            border: 1px solid $lightRed;  
+        }
+
+        .invalid_text{
+            color: black;
+        }
+        .error_msg{
+            text-align: center;
+            font-size: $xSm-fs;
+            color: $lightRed;
+            @media  screen and (min-width:$large-screen) {
+                position: absolute;
+                top:65px;
+                left:10%;
+            }
+        }
+        .email_normal_placeholder::-webkit-input-placeholder{
+            color: $gray;
+        }
+        .email_error::-webkit-input-placeholder{
+            color:black;
+        }
+        input{
+            border-radius: 2rem;
+            padding:.7rem 2rem; 
+            border: 1px solid $blue;
+            
+            &[type="email"]{
+                @media  screen and (min-width:$large-screen) {
+                    width: 63%;
+                }
+            }
+
+
+            &[type="button"]{
+                background-color: $blue;
+                color: white;
+                font-weight: $bold;
+                cursor: pointer;
+                &:hover{
+                    background-color: $paleBlue;
+                }
+                @media  screen and (min-width:$large-screen) {
+                    width: 28%;
+                }
+            }
+        }
+
+        @media  screen and (max-width:$sm-screen) {
+            flex-direction: column;
+            gap: .5rem;
+        }
+        @media  screen and (min-width:$large-screen) {
+            justify-content:space-around;
+        }
+    }
+    
+    .img_container{
+        max-width: 700px;
+    }
+
+    footer{
+        display: grid;
+        place-content: center;
+        margin-top: 3rem;
+        .social-media{
+            display: flex;
+            justify-content: center;
+            gap:1.4rem;
+            svg{
+                font-size: 1rem;
+                color: $blue;
+                padding: .5rem;
+                border-radius: 50%;
+                border-color: $paleBlue;
+                cursor: pointer;
+                &:hover{
+                    background-color: $blue;
+                    color: white;
+                }
+            }
+        }
+        .copyright{
+            margin-top: 1rem;
+            font-size: $xSm-fs;
+            color: $gray;
+        }
+    }
+}
+
+.hide{
+    display: none;
+}
